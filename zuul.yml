@@ -25,3 +25,11 @@ zuul:
             path: /home2/**
             serviceId: order2
             strip-prefix: false
+            
+order:
+  ribbon:
+    listOfServers: http://localhost:9092
+
+order2:
+  ribbon:
+    listOfServers: http://localhost:9093

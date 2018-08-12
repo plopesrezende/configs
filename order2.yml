@@ -1,6 +1,9 @@
 server:
   port: 9093
 
+info:
+  component: Client Order 2
+  
 eureka:
   instance:
     hostname: localhost
@@ -14,7 +17,3 @@ eureka:
       defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
   server:
     wait-time-in-ms-when-sync-empty: 3000
-
-ribbon:
-    eureka:
-        enabled: true

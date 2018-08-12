@@ -1,6 +1,9 @@
 server:
   port: 9094
 
+info:
+  component: Zuul Server
+  
 eureka:
   instance:
     hostname: localhost
@@ -17,19 +20,11 @@ zuul:
     prefix: /api
     ignored-services: '*'
     routes:
-        home:
+        order:
             path: /home/**
             serviceId: order
             strip-prefix: false
-        home2:
+        order2:
             path: /home2/**
             serviceId: order2
             strip-prefix: false
-            
-order:
-  ribbon:
-    listOfServers: http://localhost:9092
-
-order2:
-  ribbon:
-    listOfServers: http://localhost:9093

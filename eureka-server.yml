@@ -1,6 +1,9 @@
 server:
   port: 9091
 
+info:
+  component: Eureka Server
+  
 eureka:
   instance:
     hostname: localhost

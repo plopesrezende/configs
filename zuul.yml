@@ -1,5 +1,5 @@
 server:
-  port: 9094
+  port: 8080
 
 eureka:
   instance:
@@ -12,3 +12,16 @@ eureka:
       defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
   server:
     wait-time-in-ms-when-sync-empty: 3000
+    
+zuul:
+    prefix: /api
+    ignored-services: *
+    routes:
+        home:
+            path: /home/**
+            serviceId: home
+            strip-prefix: false
+        home2:
+            path: /home2/**
+            serviceId: home2
+            strip-prefix: false

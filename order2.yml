@@ -5,13 +5,10 @@ info:
   component: Client Order 2
   
 eureka:
-  instance:
-    hostname: localhost
-    port: 9091
-    leaseRenewalIntervalInSeconds: 1
-    leaseExpirationDurationInSeconds: 2
   client:
     registerWithEureka: true
-    fetchRegistry: false
+    fetchRegistry: true
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
+      defaultZone: http://localhost:9091/eureka/
+  instance:
+    hostname: localhost

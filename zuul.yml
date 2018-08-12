@@ -20,8 +20,8 @@ zuul:
     prefix: /api
     routes:
         order:
-            path: /order/**
+            path: /orderteste/**
             serviceId: order
         order2:
-            path: /order2/**
+            path: /orderteste2/**
             serviceId: order2

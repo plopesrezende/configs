@@ -19,9 +19,9 @@ zuul:
     routes:
         home:
             path: /home/**
-            serviceId: home
+            serviceId: order
             strip-prefix: false
         home2:
             path: /home2/**
-            serviceId: home2
+            serviceId: order2
             strip-prefix: false

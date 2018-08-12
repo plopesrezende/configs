@@ -18,7 +18,6 @@ eureka:
     
 zuul:
     prefix: /api
-    ignored-services: '*'
     routes:
         order:
             path: /home/**
@@ -28,7 +27,3 @@ zuul:
             path: /home2/**
             serviceId: order2
             strip-prefix: false
- 
-ribbon:
-    eureka:
-      enabled: false

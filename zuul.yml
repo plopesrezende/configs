@@ -25,3 +25,7 @@ zuul:
         order2:
             path: /orderteste2/**
             serviceId: order2
+
+ribbon:
+  eureka:
+    enabled: true

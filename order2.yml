@@ -5,13 +5,13 @@ info:
     component: Client Order 2
   
 eureka:
-    instance:
-        hostname: localhost
-        port: 9091
-    client:
-        registerWithEureka: true
-        fetchRegistry: true
-        serviceUrl:
-            defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
-    server:
-        wait-time-in-ms-when-sync-empty: 3000
+  client:
+    serviceUrl:
+      defaultZone: ${DISCOVERY_URL:http://localhost:9091}/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+            
+ribbon:
+  eureka:
+    enabled: true

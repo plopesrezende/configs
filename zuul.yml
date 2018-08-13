@@ -5,23 +5,21 @@ info:
     component: Zuul Server
   
 eureka:
-    instance:
-        hostname: localhost
-        port: 9091
-    client:
-        registerWithEureka: true
-        fetchRegistry: true
-        serviceUrl:
-            defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
-    server:
-        wait-time-in-ms-when-sync-empty: 3000
+  client:
+    serviceUrl:
+      defaultZone: ${DISCOVERY_URL:http://localhost:9091}/eureka/
+    registerWithEureka: false
     
 zuul:
     prefix: /api
     routes:
-        order:
+        orderteste:
             path: /orderteste/**
             serviceId: order
-        order2:
+        orderteste2:
             path: /orderteste2/**
             serviceId: order2
+            
+ribbon:
+  eureka:
+    enabled: true

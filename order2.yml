@@ -1,18 +1,17 @@
 server:
-  port: 9093
+    port: 9093
 
 info:
-  component: Client Order 2
+    component: Client Order 2
   
 eureka:
-  client:
-    registerWithEureka: true
-    fetchRegistry: true
-    serviceUrl:
-      defaultZone: http://localhost:9091/eureka/
-  instance:
-    hostname: localhost
-
-order2:
-  ribbon:
-    listOfServers: http://localhost:9093
+    instance:
+        hostname: localhost
+        port: 9091
+    client:
+        registerWithEureka: true
+        fetchRegistry: true
+        serviceUrl:
+            defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
+    server:
+        wait-time-in-ms-when-sync-empty: 3000

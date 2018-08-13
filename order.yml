@@ -15,4 +15,4 @@ eureka:
 
 ribbon:
   eureka:
-    enabled: true
+    enabled: false
